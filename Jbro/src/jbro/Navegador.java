@@ -24,7 +24,7 @@ public class Navegador extends Region {
 
     public Navegador() {
         getStyleClass().add("navegador");
-        webEngine.load("http://localhost:8080/jce-evaluacion");
+        webEngine.load("http://localhost:8383/servicio-escolar/");
         getChildren().add(browser);
     }
     private Node createSpacer() {
