@@ -1,4 +1,4 @@
 /**
  * Simplified Java API commands for controlling a camera
  */
-package edsdk.api.commands;
+package modules.canon.api.commands;

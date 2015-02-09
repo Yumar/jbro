@@ -1,4 +1,4 @@
-package edsdk.utils;
+package modules.canon.utils;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -16,42 +16,42 @@ import com.sun.jna.Structure;
 import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
-import edsdk.api.CanonCamera;
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdSdkLibrary.EdsCameraRef;
-import edsdk.bindings.EdSdkLibrary.EdsDirectoryItemRef;
-import edsdk.bindings.EdSdkLibrary.EdsEvfImageRef;
-import edsdk.bindings.EdSdkLibrary.EdsStreamRef;
-import edsdk.bindings.EdsCapacity;
-import edsdk.bindings.EdsDirectoryItemInfo;
-import edsdk.bindings.EdsFocusInfo;
-import edsdk.bindings.EdsPictureStyleDesc;
-import edsdk.bindings.EdsPoint;
-import edsdk.bindings.EdsPropertyDesc;
-import edsdk.bindings.EdsRational;
-import edsdk.bindings.EdsRect;
-import edsdk.bindings.EdsTime;
-import edsdk.utils.CanonConstants.DescriptiveEnum;
-import edsdk.utils.CanonConstants.EdsAEMode;
-import edsdk.utils.CanonConstants.EdsAFMode;
-import edsdk.utils.CanonConstants.EdsAccess;
-import edsdk.utils.CanonConstants.EdsAv;
-import edsdk.utils.CanonConstants.EdsColorSpace;
-import edsdk.utils.CanonConstants.EdsCustomFunction;
-import edsdk.utils.CanonConstants.EdsDataType;
-import edsdk.utils.CanonConstants.EdsDriveMode;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsEvfAFMode;
-import edsdk.utils.CanonConstants.EdsEvfOutputDevice;
-import edsdk.utils.CanonConstants.EdsExposureCompensation;
-import edsdk.utils.CanonConstants.EdsFileCreateDisposition;
-import edsdk.utils.CanonConstants.EdsISOSpeed;
-import edsdk.utils.CanonConstants.EdsImageQuality;
-import edsdk.utils.CanonConstants.EdsMeteringMode;
-import edsdk.utils.CanonConstants.EdsPictureStyle;
-import edsdk.utils.CanonConstants.EdsPropertyID;
-import edsdk.utils.CanonConstants.EdsTv;
-import edsdk.utils.CanonConstants.EdsWhiteBalance;
+import modules.canon.api.CanonCamera;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdSdkLibrary.EdsCameraRef;
+import modules.canon.bindings.EdSdkLibrary.EdsDirectoryItemRef;
+import modules.canon.bindings.EdSdkLibrary.EdsEvfImageRef;
+import modules.canon.bindings.EdSdkLibrary.EdsStreamRef;
+import modules.canon.bindings.EdsCapacity;
+import modules.canon.bindings.EdsDirectoryItemInfo;
+import modules.canon.bindings.EdsFocusInfo;
+import modules.canon.bindings.EdsPictureStyleDesc;
+import modules.canon.bindings.EdsPoint;
+import modules.canon.bindings.EdsPropertyDesc;
+import modules.canon.bindings.EdsRational;
+import modules.canon.bindings.EdsRect;
+import modules.canon.bindings.EdsTime;
+import modules.canon.utils.CanonConstants.DescriptiveEnum;
+import modules.canon.utils.CanonConstants.EdsAEMode;
+import modules.canon.utils.CanonConstants.EdsAFMode;
+import modules.canon.utils.CanonConstants.EdsAccess;
+import modules.canon.utils.CanonConstants.EdsAv;
+import modules.canon.utils.CanonConstants.EdsColorSpace;
+import modules.canon.utils.CanonConstants.EdsCustomFunction;
+import modules.canon.utils.CanonConstants.EdsDataType;
+import modules.canon.utils.CanonConstants.EdsDriveMode;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsEvfAFMode;
+import modules.canon.utils.CanonConstants.EdsEvfOutputDevice;
+import modules.canon.utils.CanonConstants.EdsExposureCompensation;
+import modules.canon.utils.CanonConstants.EdsFileCreateDisposition;
+import modules.canon.utils.CanonConstants.EdsISOSpeed;
+import modules.canon.utils.CanonConstants.EdsImageQuality;
+import modules.canon.utils.CanonConstants.EdsMeteringMode;
+import modules.canon.utils.CanonConstants.EdsPictureStyle;
+import modules.canon.utils.CanonConstants.EdsPropertyID;
+import modules.canon.utils.CanonConstants.EdsTv;
+import modules.canon.utils.CanonConstants.EdsWhiteBalance;
 
 /**
  * Here are some great helpers.
@@ -183,7 +183,7 @@ public class CanonUtils {
                  * " to " + destination.getCanonicalPath() );
                  */
 
-                // TODO: see if using an EdsCreateMemoryStream would be faster and whether the image could be read directly without saving to file first - see: http://stackoverflow.com/questions/1083446/canon-edsdk-memorystream-image
+                // TODO: see if using an EdsCreateMemoryStream would be faster and whether the image could be read directly without saving to file first - see: http://stackoverflow.com/questions/1083446/canon-modules.canon-memorystream-image
                 err = CanonUtils.toEdsError( CanonCamera.EDSDK.EdsCreateFileStream( Native.toByteArray( destination.getCanonicalPath() ), EdsFileCreateDisposition.kEdsFileCreateDisposition_CreateAlways.value(), EdsAccess.kEdsAccess_ReadWrite.value(), stream ) );
             }
 
@@ -635,33 +635,33 @@ public class CanonUtils {
      * 
      * @param camera The camera to get the available property settings of
      * @param property
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_DriveMode
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_DriveMode
      *            kEdsPropID_DriveMode}
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_ISOSpeed
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_ISOSpeed
      *            kEdsPropID_ISOSpeed},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_MeteringMode
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_MeteringMode
      *            kEdsPropID_MeteringMode},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_AFMode
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_AFMode
      *            kEdsPropID_AFMode},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_Av
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_Av
      *            kEdsPropID_Av},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_Tv
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_Tv
      *            kEdsPropID_Tv},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_ExposureCompensation
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_ExposureCompensation
      *            kEdsPropID_ExposureCompensation},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_AEMode
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_AEMode
      *            kEdsPropID_AEMode},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_ImageQuality
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_ImageQuality
      *            kEdsPropID_ImageQuality},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_WhiteBalance
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_WhiteBalance
      *            kEdsPropID_WhiteBalance},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_ColorSpace
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_ColorSpace
      *            kEdsPropID_ColorSpace},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_PictureStyle
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_PictureStyle
      *            kEdsPropID_PictureStyle},
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_Evf_WhiteBalance
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_Evf_WhiteBalance
      *            kEdsPropID_Evf_WhiteBalance}, or
-     *            {@link edsdk.utils.CanonConstants.EdsPropertyID#kEdsPropID_Evf_AFMode
+     *            {@link modules.canon.utils.CanonConstants.EdsPropertyID#kEdsPropID_Evf_AFMode
      *            kEdsPropID_Evf_AFMode}
      * @return A DescriptiveEnum array of the available settings for the given
      *         property
@@ -919,7 +919,7 @@ public class CanonUtils {
     /**
      * Creates a stream and corresponding live view image. 
      * Don't forget to call 
-     * {@link CanonUtils#release(edsdk.bindings.EdSdkLibrary.EdsBaseRef.ByReference...)
+     * {@link CanonUtils#release(modules.canon.bindings.EdSdkLibrary.EdsBaseRef.ByReference...)
      * release()} on the returned array when you are done using it or
      * you will cause a memory leak!
      * 

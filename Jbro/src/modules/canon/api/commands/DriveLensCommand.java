@@ -1,10 +1,10 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
-import edsdk.api.CanonCommand;
-import edsdk.utils.CanonConstants;
-import edsdk.utils.CanonConstants.EdsCameraCommand;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsEvfDriveLens;
+import modules.canon.api.CanonCommand;
+import modules.canon.utils.CanonConstants;
+import modules.canon.utils.CanonConstants.EdsCameraCommand;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsEvfDriveLens;
 
 /**
  * Drives the lens in a direction.

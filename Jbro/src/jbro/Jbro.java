@@ -10,7 +10,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -19,9 +21,8 @@ import javafx.stage.Stage;
 public class Jbro extends Application {
     
     @Override
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/jbro/vista/Navegador.fxml"));        
-        Scene scene = new Scene(root);        
+    public void start(Stage stage) throws IOException {   
+        Scene scene = new Scene(new Navegador(),750,500, Color.web("#666970"));     
         stage.setTitle("jBro");
         stage.setScene(scene);
         stage.setMaximized(true);

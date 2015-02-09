@@ -1,4 +1,4 @@
-package edsdk.api;
+package modules.canon.api;
 
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
@@ -6,15 +6,15 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdSdkLibrary.EdsCameraRef;
-import edsdk.bindings.EdSdkLibrary.EdsObjectEventHandler;
-import edsdk.utils.CanonConstants.DescriptiveEnum;
-import edsdk.utils.CanonConstants.EdsCameraCommand;
-import edsdk.utils.CanonConstants.EdsCameraStatusCommand;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsObjectEvent;
-import edsdk.utils.CanonUtils;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdSdkLibrary.EdsCameraRef;
+import modules.canon.bindings.EdSdkLibrary.EdsObjectEventHandler;
+import modules.canon.utils.CanonConstants.DescriptiveEnum;
+import modules.canon.utils.CanonConstants.EdsCameraCommand;
+import modules.canon.utils.CanonConstants.EdsCameraStatusCommand;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsObjectEvent;
+import modules.canon.utils.CanonUtils;
 
 /**
  * The CanonCommand class tries to make your life a whole lot easier when you

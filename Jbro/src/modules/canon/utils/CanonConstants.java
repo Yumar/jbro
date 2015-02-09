@@ -1,4 +1,4 @@
-package edsdk.utils;
+package modules.canon.utils;
 
 /**
  * A Lot of constants.
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 
-import edsdk.bindings.EdSdkLibrary;
+import modules.canon.bindings.EdSdkLibrary;
 
 public class CanonConstants {
 
@@ -126,14 +126,14 @@ public class CanonConstants {
     }
 
     /**
-     * Ensure that {@link edsdk.utils.CanonConstants CanonConstants} contains
+     * Ensure that {@link modules.canon.utils.CanonConstants CanonConstants} contains
      * all
-     * constant values from {@link edsdk.bindings.EdSdkLibrary}
+     * constant values from {@link modules.canon.bindings.EdSdkLibrary}
      * 
-     * @return true if {@link edsdk.utils.CanonConstants CanonConstants}
+     * @return true if {@link modules.canon.utils.CanonConstants CanonConstants}
      *         contains
      *         all values, bar those in
-     *         {@link edsdk.utils.CanonConstants#constantIgnoreList
+     *         {@link modules.canon.utils.CanonConstants#constantIgnoreList
      *         constantIgnoreList}
      */
     public static final boolean verifyAllConstants() {
@@ -207,9 +207,9 @@ public class CanonConstants {
      * files, so values are taken from the EDSDK API documentation PDF and
      * compiled here for convenience. Interestingly, most of these are the
      * values (with
-     * the exception of {@link edsdk.EdSdkLibrary#kEdsPropID_AEMode
+     * the exception of {@link modules.canon.EdSdkLibrary#kEdsPropID_AEMode
      * kEdsPropID_AEMode} whose values are provided by the EDSDK) that can be
-     * queried by {@link edsdk.EdSdkLibrary#EdsGetPropertyDesc
+     * queried by {@link modules.canon.EdSdkLibrary#EdsGetPropertyDesc
      * EdsGetPropertyDesc}
      */
 

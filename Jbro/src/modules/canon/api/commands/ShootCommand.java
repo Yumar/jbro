@@ -1,21 +1,21 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
 import java.io.File;
 import java.io.IOException;
 
 import com.sun.jna.Pointer;
 
-import edsdk.api.CanonCommand;
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdSdkLibrary.EdsDirectoryItemRef;
-import edsdk.utils.CanonConstants.EdsCameraCommand;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsImageType;
-import edsdk.utils.CanonConstants.EdsObjectEvent;
-import edsdk.utils.CanonConstants.EdsPropertyID;
-import edsdk.utils.CanonConstants.EdsSaveTo;
-import edsdk.utils.CanonConstants.EdsShutterButton;
-import edsdk.utils.CanonUtils;
+import modules.canon.api.CanonCommand;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdSdkLibrary.EdsDirectoryItemRef;
+import modules.canon.utils.CanonConstants.EdsCameraCommand;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsImageType;
+import modules.canon.utils.CanonConstants.EdsObjectEvent;
+import modules.canon.utils.CanonConstants.EdsPropertyID;
+import modules.canon.utils.CanonConstants.EdsSaveTo;
+import modules.canon.utils.CanonConstants.EdsShutterButton;
+import modules.canon.utils.CanonUtils;
 
 /**
  * Takes an image and downloads it to the file system.

@@ -1,42 +1,42 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
 import java.lang.reflect.Array;
 
 import com.sun.jna.NativeLong;
 
-import edsdk.api.CanonCommand;
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdsFocusInfo;
-import edsdk.bindings.EdsPictureStyleDesc;
-import edsdk.bindings.EdsPoint;
-import edsdk.bindings.EdsRect;
-import edsdk.bindings.EdsSize;
-import edsdk.bindings.EdsTime;
-import edsdk.utils.CanonConstants;
-import edsdk.utils.CanonConstants.DescriptiveEnum;
-import edsdk.utils.CanonConstants.EdsAEMode;
-import edsdk.utils.CanonConstants.EdsAFMode;
-import edsdk.utils.CanonConstants.EdsAv;
-import edsdk.utils.CanonConstants.EdsBatteryQuality;
-import edsdk.utils.CanonConstants.EdsBracket;
-import edsdk.utils.CanonConstants.EdsColorSpace;
-import edsdk.utils.CanonConstants.EdsCustomFunction;
-import edsdk.utils.CanonConstants.EdsDataType;
-import edsdk.utils.CanonConstants.EdsDriveMode;
-import edsdk.utils.CanonConstants.EdsEvfAFMode;
-import edsdk.utils.CanonConstants.EdsEvfHistogramStatus;
-import edsdk.utils.CanonConstants.EdsEvfOutputDevice;
-import edsdk.utils.CanonConstants.EdsEvfZoom;
-import edsdk.utils.CanonConstants.EdsExposureCompensation;
-import edsdk.utils.CanonConstants.EdsISOSpeed;
-import edsdk.utils.CanonConstants.EdsImageQuality;
-import edsdk.utils.CanonConstants.EdsMeteringMode;
-import edsdk.utils.CanonConstants.EdsPictureStyle;
-import edsdk.utils.CanonConstants.EdsPropertyID;
-import edsdk.utils.CanonConstants.EdsSaveTo;
-import edsdk.utils.CanonConstants.EdsTv;
-import edsdk.utils.CanonConstants.EdsWhiteBalance;
-import edsdk.utils.CanonUtils;
+import modules.canon.api.CanonCommand;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdsFocusInfo;
+import modules.canon.bindings.EdsPictureStyleDesc;
+import modules.canon.bindings.EdsPoint;
+import modules.canon.bindings.EdsRect;
+import modules.canon.bindings.EdsSize;
+import modules.canon.bindings.EdsTime;
+import modules.canon.utils.CanonConstants;
+import modules.canon.utils.CanonConstants.DescriptiveEnum;
+import modules.canon.utils.CanonConstants.EdsAEMode;
+import modules.canon.utils.CanonConstants.EdsAFMode;
+import modules.canon.utils.CanonConstants.EdsAv;
+import modules.canon.utils.CanonConstants.EdsBatteryQuality;
+import modules.canon.utils.CanonConstants.EdsBracket;
+import modules.canon.utils.CanonConstants.EdsColorSpace;
+import modules.canon.utils.CanonConstants.EdsCustomFunction;
+import modules.canon.utils.CanonConstants.EdsDataType;
+import modules.canon.utils.CanonConstants.EdsDriveMode;
+import modules.canon.utils.CanonConstants.EdsEvfAFMode;
+import modules.canon.utils.CanonConstants.EdsEvfHistogramStatus;
+import modules.canon.utils.CanonConstants.EdsEvfOutputDevice;
+import modules.canon.utils.CanonConstants.EdsEvfZoom;
+import modules.canon.utils.CanonConstants.EdsExposureCompensation;
+import modules.canon.utils.CanonConstants.EdsISOSpeed;
+import modules.canon.utils.CanonConstants.EdsImageQuality;
+import modules.canon.utils.CanonConstants.EdsMeteringMode;
+import modules.canon.utils.CanonConstants.EdsPictureStyle;
+import modules.canon.utils.CanonConstants.EdsPropertyID;
+import modules.canon.utils.CanonConstants.EdsSaveTo;
+import modules.canon.utils.CanonConstants.EdsTv;
+import modules.canon.utils.CanonConstants.EdsWhiteBalance;
+import modules.canon.utils.CanonUtils;
 
 /**
  * Gets a property from the camera.

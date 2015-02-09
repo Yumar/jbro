@@ -2,7 +2,7 @@
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Jbro.jnlp">
   <information>
     <title>Jbro</title>
-    <vendor>yumarx_polanco</vendor>
+    <vendor>jce</vendor>
     <description>null</description>
     <offline-allowed/>
   </information>
@@ -11,8 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="lib/Jbro-Preloader.jar" size="2969" download="progress" />
-    <jar href="Jbro.jar" size="326671" download="eager" />
+    <jar href="Jbro.jar" size="318082" download="eager" />
     <jar href="lib/imgscalr-lib-4.2.jar" size="226824" download="eager" />
     <jar href="lib/jna-3.4.2.jar" size="1370355" download="eager" />
     <jar href="lib/jna-platform-3.4.2.jar" size="926988" download="eager" />
@@ -21,6 +20,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Jbro" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="jbro.Jbro"  name="Jbro"  preloader-class="jbro.preloader.Jbro_Preloader"/>
+  <jfx:javafx-desc  width="800" height="600" main-class="jbro.Jbro"  name="Jbro" />
   <update check="always"/>
 </jnlp>

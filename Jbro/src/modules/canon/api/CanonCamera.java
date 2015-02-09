@@ -1,4 +1,4 @@
-package edsdk.api;
+package modules.canon.api;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -18,63 +18,63 @@ import com.sun.jna.platform.win32.WinUser.MSG;
 import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.win32.StdCallLibrary;
 
-import edsdk.api.commands.DriveLensCommand;
-import edsdk.api.commands.FocusModeCommand;
-import edsdk.api.commands.GetPropertyCommand;
-import edsdk.api.commands.GetPropertyDescCommand;
-import edsdk.api.commands.LiveViewCommand;
-import edsdk.api.commands.SetPropertyCommand;
-import edsdk.api.commands.ShootCommand;
-import edsdk.bindings.EdSdkLibrary;
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdSdkLibrary.EdsCameraListRef;
-import edsdk.bindings.EdSdkLibrary.EdsCameraRef;
-import edsdk.bindings.EdSdkLibrary.EdsObjectEventHandler;
-import edsdk.bindings.EdsFocusInfo;
-import edsdk.bindings.EdsPictureStyleDesc;
-import edsdk.bindings.EdsPoint;
-import edsdk.bindings.EdsPropertyDesc;
-import edsdk.bindings.EdsRect;
-import edsdk.bindings.EdsSize;
-import edsdk.bindings.EdsTime;
-import edsdk.utils.CanonConstants.DescriptiveEnum;
-import edsdk.utils.CanonConstants.EdsAEMode;
-import edsdk.utils.CanonConstants.EdsAFMode;
-import edsdk.utils.CanonConstants.EdsAv;
-import edsdk.utils.CanonConstants.EdsBatteryQuality;
-import edsdk.utils.CanonConstants.EdsBracket;
-import edsdk.utils.CanonConstants.EdsColorSpace;
-import edsdk.utils.CanonConstants.EdsCustomFunction;
-import edsdk.utils.CanonConstants.EdsDataType;
-import edsdk.utils.CanonConstants.EdsDriveMode;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsEvfAFMode;
-import edsdk.utils.CanonConstants.EdsEvfDriveLens;
-import edsdk.utils.CanonConstants.EdsEvfHistogramStatus;
-import edsdk.utils.CanonConstants.EdsEvfOutputDevice;
-import edsdk.utils.CanonConstants.EdsEvfZoom;
-import edsdk.utils.CanonConstants.EdsExposureCompensation;
-import edsdk.utils.CanonConstants.EdsFilterEffect;
-import edsdk.utils.CanonConstants.EdsISOSpeed;
-import edsdk.utils.CanonConstants.EdsImageQuality;
-import edsdk.utils.CanonConstants.EdsMeteringMode;
-import edsdk.utils.CanonConstants.EdsObjectEvent;
-import edsdk.utils.CanonConstants.EdsPictureStyle;
-import edsdk.utils.CanonConstants.EdsPropertyID;
-import edsdk.utils.CanonConstants.EdsSaveTo;
-import edsdk.utils.CanonConstants.EdsTonigEffect;
-import edsdk.utils.CanonConstants.EdsTv;
-import edsdk.utils.CanonConstants.EdsWhiteBalance;
-import edsdk.utils.CanonUtils;
+import modules.canon.api.commands.DriveLensCommand;
+import modules.canon.api.commands.FocusModeCommand;
+import modules.canon.api.commands.GetPropertyCommand;
+import modules.canon.api.commands.GetPropertyDescCommand;
+import modules.canon.api.commands.LiveViewCommand;
+import modules.canon.api.commands.SetPropertyCommand;
+import modules.canon.api.commands.ShootCommand;
+import modules.canon.bindings.EdSdkLibrary;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdSdkLibrary.EdsCameraListRef;
+import modules.canon.bindings.EdSdkLibrary.EdsCameraRef;
+import modules.canon.bindings.EdSdkLibrary.EdsObjectEventHandler;
+import modules.canon.bindings.EdsFocusInfo;
+import modules.canon.bindings.EdsPictureStyleDesc;
+import modules.canon.bindings.EdsPoint;
+import modules.canon.bindings.EdsPropertyDesc;
+import modules.canon.bindings.EdsRect;
+import modules.canon.bindings.EdsSize;
+import modules.canon.bindings.EdsTime;
+import modules.canon.utils.CanonConstants.DescriptiveEnum;
+import modules.canon.utils.CanonConstants.EdsAEMode;
+import modules.canon.utils.CanonConstants.EdsAFMode;
+import modules.canon.utils.CanonConstants.EdsAv;
+import modules.canon.utils.CanonConstants.EdsBatteryQuality;
+import modules.canon.utils.CanonConstants.EdsBracket;
+import modules.canon.utils.CanonConstants.EdsColorSpace;
+import modules.canon.utils.CanonConstants.EdsCustomFunction;
+import modules.canon.utils.CanonConstants.EdsDataType;
+import modules.canon.utils.CanonConstants.EdsDriveMode;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsEvfAFMode;
+import modules.canon.utils.CanonConstants.EdsEvfDriveLens;
+import modules.canon.utils.CanonConstants.EdsEvfHistogramStatus;
+import modules.canon.utils.CanonConstants.EdsEvfOutputDevice;
+import modules.canon.utils.CanonConstants.EdsEvfZoom;
+import modules.canon.utils.CanonConstants.EdsExposureCompensation;
+import modules.canon.utils.CanonConstants.EdsFilterEffect;
+import modules.canon.utils.CanonConstants.EdsISOSpeed;
+import modules.canon.utils.CanonConstants.EdsImageQuality;
+import modules.canon.utils.CanonConstants.EdsMeteringMode;
+import modules.canon.utils.CanonConstants.EdsObjectEvent;
+import modules.canon.utils.CanonConstants.EdsPictureStyle;
+import modules.canon.utils.CanonConstants.EdsPropertyID;
+import modules.canon.utils.CanonConstants.EdsSaveTo;
+import modules.canon.utils.CanonConstants.EdsTonigEffect;
+import modules.canon.utils.CanonConstants.EdsTv;
+import modules.canon.utils.CanonConstants.EdsWhiteBalance;
+import modules.canon.utils.CanonUtils;
 
 /**
  * This class should be the easiest way to use the canon sdk.
  * Please note that you _can_ use the sdk directly or also
  * use this class to get the basic communication running, and then
- * communicate with the edsdk directly.
+ * communicate with the modules.canon directly.
  * 
  * Either way, one of the most important things to remember is that
- * edsdk is not multithreaded so your vm might crash if you just call functions
+ * modules.canon is not multithreaded so your vm might crash if you just call functions
  * from the library.
  * Instead I suggest you use the static method SLR.invoke( Runnable r );
  * or the method canonCamera.invoke( CanonCommand cmd );
@@ -94,7 +94,7 @@ import edsdk.utils.CanonUtils;
  * 
  * This class also automatically processes and forwards all windows-style
  * messages.
- * This is required to forward camera events into the edsdk. Currently there is
+ * This is required to forward camera events into the modules.canon. Currently there is
  * no way to disable this if it conflicts with your software.
  * 
  * Copyright © 2014 Hansi Raber <super@superduper.org>, Ananta Palani
@@ -315,12 +315,12 @@ public class CanonCamera implements EdsObjectEventHandler {
         return execute( new SetPropertyCommand.EnumData( property, value ) );
     }
 
-    // some external users of edsdk4j (like Matlab) don't realize they can use setProperty(EdsPropertyID, long) with Integer values
+    // some external users of modules.canon4j (like Matlab) don't realize they can use setProperty(EdsPropertyID, long) with Integer values
     public Boolean setProperty( final EdsPropertyID property, final int value ) {
         return executeNow( new SetPropertyCommand.Data( property, value ) );
     }
 
-    // some external users of edsdk4j (like Matlab) don't realize they can use setProperty(EdsPropertyID, long) with Integer values
+    // some external users of modules.canon4j (like Matlab) don't realize they can use setProperty(EdsPropertyID, long) with Integer values
     public SetPropertyCommand.Data setPropertyAsync( final EdsPropertyID property,
                                                      final int value ) {
         return execute( new SetPropertyCommand.Data( property, value ) );

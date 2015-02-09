@@ -1,10 +1,10 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
-import edsdk.api.CanonCommand;
-import edsdk.utils.CanonConstants.EdsAFMode;
-import edsdk.utils.CanonConstants.EdsEvfAFMode;
-import edsdk.utils.CanonConstants.EdsPropertyID;
-import edsdk.utils.CanonUtils;
+import modules.canon.api.CanonCommand;
+import modules.canon.utils.CanonConstants.EdsAFMode;
+import modules.canon.utils.CanonConstants.EdsEvfAFMode;
+import modules.canon.utils.CanonConstants.EdsPropertyID;
+import modules.canon.utils.CanonUtils;
 
 /**
  * Performs a focus operation on the camera.

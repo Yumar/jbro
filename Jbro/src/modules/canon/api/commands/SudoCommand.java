@@ -1,6 +1,6 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
-import edsdk.api.CanonCommand;
+import modules.canon.api.CanonCommand;
 
 /**
  * 

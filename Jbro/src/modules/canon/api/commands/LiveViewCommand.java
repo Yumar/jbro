@@ -1,9 +1,9 @@
-package edsdk.api.commands;
+package modules.canon.api.commands;
 
 import java.awt.image.BufferedImage;
 
-import edsdk.api.CanonCommand;
-import edsdk.utils.CanonUtils;
+import modules.canon.api.CanonCommand;
+import modules.canon.utils.CanonUtils;
 
 /**
  * Performs a live view command on the camera.

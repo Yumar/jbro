@@ -1,4 +1,4 @@
-package edsdk.bindings;
+package modules.canon.bindings;
 
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;

@@ -1,4 +1,4 @@
-package edsdk.bindings;
+package modules.canon.bindings;
 
 // import com.sun.jna.Native;
 // import com.sun.jna.NativeLibrary;
@@ -1991,9 +1991,9 @@ public interface EdSdkLibrary extends StdCallLibrary {
      * <i>native declaration : EDSDK\Header\EDSDK.h:212</i><br>
      * 
      * @deprecated use the safer methods
-     *             {@link #EdsGetPropertySize(edsdk.bindings.EdSdkLibrary.EdsBaseRef, com.sun.jna.NativeLong, com.sun.jna.NativeLong, java.nio.IntBuffer, com.sun.jna.ptr.NativeLongByReference)}
+     *             {@link #EdsGetPropertySize(modules.canon.bindings.EdSdkLibrary.EdsBaseRef, com.sun.jna.NativeLong, com.sun.jna.NativeLong, java.nio.IntBuffer, com.sun.jna.ptr.NativeLongByReference)}
      *             and
-     *             {@link #EdsGetPropertySize(edsdk.bindings.EdSdkLibrary.EdsBaseRef, com.sun.jna.NativeLong, com.sun.jna.NativeLong, com.sun.jna.ptr.IntByReference, com.sun.jna.ptr.NativeLongByReference)}
+     *             {@link #EdsGetPropertySize(modules.canon.bindings.EdSdkLibrary.EdsBaseRef, com.sun.jna.NativeLong, com.sun.jna.NativeLong, com.sun.jna.ptr.IntByReference, com.sun.jna.ptr.NativeLongByReference)}
      *             instead
      */
     @Deprecated
@@ -2316,7 +2316,7 @@ public interface EdSdkLibrary extends StdCallLibrary {
      * <i>native declaration : EDSDK\Header\EDSDK.h:447</i>
      */
     NativeLong EdsSetCapacity( EdSdkLibrary.EdsCameraRef inCameraRef,
-                               edsdk.bindings.EdsCapacity.ByValue inCapacity );
+                               modules.canon.bindings.EdsCapacity.ByValue inCapacity );
 
     /**
      * ------------------------------------------------------------------------
@@ -2557,9 +2557,9 @@ public interface EdSdkLibrary extends StdCallLibrary {
      * <i>native declaration : EDSDK\Header\EDSDK.h:641</i><br>
      * 
      * @deprecated use the safer methods
-     *             {@link #EdsGetAttribute(edsdk.bindings.EdSdkLibrary.EdsDirectoryItemRef, java.nio.IntBuffer)}
+     *             {@link #EdsGetAttribute(modules.canon.bindings.EdSdkLibrary.EdsDirectoryItemRef, java.nio.IntBuffer)}
      *             and
-     *             {@link #EdsGetAttribute(edsdk.bindings.EdSdkLibrary.EdsDirectoryItemRef, com.sun.jna.ptr.IntByReference)}
+     *             {@link #EdsGetAttribute(modules.canon.bindings.EdSdkLibrary.EdsDirectoryItemRef, com.sun.jna.ptr.IntByReference)}
      *             instead
      */
     @Deprecated
@@ -2651,9 +2651,9 @@ public interface EdSdkLibrary extends StdCallLibrary {
      * <i>native declaration : EDSDK\Header\EDSDK.h:696</i><br>
      * 
      * @deprecated use the safer methods
-     *             {@link #EdsCreateFileStream(byte[], int, int, edsdk.bindings.EdSdkLibrary.EdsStreamRef)}
+     *             {@link #EdsCreateFileStream(byte[], int, int, modules.canon.bindings.EdSdkLibrary.EdsStreamRef)}
      *             and
-     *             {@link #EdsCreateFileStream(com.sun.jna.Pointer, int, int, edsdk.bindings.EdSdkLibrary.EdsStreamRef)}
+     *             {@link #EdsCreateFileStream(com.sun.jna.Pointer, int, int, modules.canon.bindings.EdSdkLibrary.EdsStreamRef)}
      *             instead
      */
     @Deprecated
@@ -2750,9 +2750,9 @@ public interface EdSdkLibrary extends StdCallLibrary {
      * <i>native declaration : EDSDK\Header\EDSDK.h:742</i><br>
      * 
      * @deprecated use the safer methods
-     *             {@link #EdsCreateFileStreamEx(short[], int, int, edsdk.bindings.EdSdkLibrary.EdsStreamRef)}
+     *             {@link #EdsCreateFileStreamEx(short[], int, int, modules.canon.bindings.EdSdkLibrary.EdsStreamRef)}
      *             and
-     *             {@link #EdsCreateFileStreamEx(com.sun.jna.ptr.ShortByReference, int, int, edsdk.bindings.EdSdkLibrary.EdsStreamRef)}
+     *             {@link #EdsCreateFileStreamEx(com.sun.jna.ptr.ShortByReference, int, int, modules.canon.bindings.EdSdkLibrary.EdsStreamRef)}
      *             instead
      */
     @Deprecated
@@ -3204,8 +3204,8 @@ public interface EdSdkLibrary extends StdCallLibrary {
      */
     NativeLong EdsGetImage( EdSdkLibrary.EdsImageRef inImageRef,
                             int inImageSource, int inImageType,
-                            edsdk.bindings.EdsRect.ByValue inSrcRect,
-                            edsdk.bindings.EdsSize.ByValue inDstSize,
+                            modules.canon.bindings.EdsRect.ByValue inSrcRect,
+                            modules.canon.bindings.EdsSize.ByValue inDstSize,
                             EdSdkLibrary.EdsStreamRef outStreamRef );
 
     /**
@@ -3242,7 +3242,7 @@ public interface EdSdkLibrary extends StdCallLibrary {
      */
     NativeLong EdsSaveImage( EdSdkLibrary.EdsImageRef inImageRef,
                              int inImageType,
-                             edsdk.bindings.EdsSaveImageSetting.ByValue inSaveSetting,
+                             modules.canon.bindings.EdsSaveImageSetting.ByValue inSaveSetting,
                              EdSdkLibrary.EdsStreamRef outStreamRef );
 
     /**

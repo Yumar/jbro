@@ -1,4 +1,4 @@
-package edsdk.api;
+package modules.canon.api;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package edsdk.bindings;
+package modules.canon.bindings;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
@@ -20,27 +20,27 @@ public class EdsIStream extends Structure {
     /// C type : void*
     public Pointer context;
     /**
-     * @see edsdk.EdSdkLibrary.EdsReadStream<br>
+     * @see modules.canon.EdSdkLibrary.EdsReadStream<br>
      *      C type : EdsReadStream*
      */
     public Pointer read;
     /**
-     * @see edsdk.EdSdkLibrary.EdsWriteStream<br>
+     * @see modules.canon.EdSdkLibrary.EdsWriteStream<br>
      *      C type : EdsWriteStream*
      */
     public Pointer write;
     /**
-     * @see edsdk.EdSdkLibrary.EdsSeekStream<br>
+     * @see modules.canon.EdSdkLibrary.EdsSeekStream<br>
      *      C type : EdsSeekStream*
      */
     public Pointer seek;
     /**
-     * @see edsdk.EdSdkLibrary.EdsTellStream<br>
+     * @see modules.canon.EdSdkLibrary.EdsTellStream<br>
      *      C type : EdsTellStream*
      */
     public Pointer tell;
     /**
-     * @see edsdk.EdSdkLibrary.EdsGetStreamLength<br>
+     * @see modules.canon.EdSdkLibrary.EdsGetStreamLength<br>
      *      C type : EdsGetStreamLength*
      */
     public Pointer getLength;
@@ -57,15 +57,15 @@ public class EdsIStream extends Structure {
 
     /**
      * @param context C type : void*<br>
-     * @param read @see edsdk.EdSdkLibrary.EdsReadStream<br>
+     * @param read @see modules.canon.EdSdkLibrary.EdsReadStream<br>
      *            C type : EdsReadStream*<br>
-     * @param write @see edsdk.EdSdkLibrary.EdsWriteStream<br>
+     * @param write @see modules.canon.EdSdkLibrary.EdsWriteStream<br>
      *            C type : EdsWriteStream*<br>
-     * @param seek @see edsdk.EdSdkLibrary.EdsSeekStream<br>
+     * @param seek @see modules.canon.EdSdkLibrary.EdsSeekStream<br>
      *            C type : EdsSeekStream*<br>
-     * @param tell @see edsdk.EdSdkLibrary.EdsTellStream<br>
+     * @param tell @see modules.canon.EdSdkLibrary.EdsTellStream<br>
      *            C type : EdsTellStream*<br>
-     * @param getLength @see edsdk.EdSdkLibrary.EdsGetStreamLength<br>
+     * @param getLength @see modules.canon.EdSdkLibrary.EdsGetStreamLength<br>
      *            C type : EdsGetStreamLength*
      */
     public EdsIStream( final Pointer context, final Pointer read,

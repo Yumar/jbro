@@ -1,4 +1,4 @@
-package edsdk.api;
+package modules.canon.api;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 
-import edsdk.bindings.EdSdkLibrary.EdsBaseRef;
-import edsdk.bindings.EdSdkLibrary.EdsDirectoryItemRef;
-import edsdk.bindings.EdSdkLibrary.EdsObjectEventHandler;
-import edsdk.utils.CanonConstants.EdsCameraCommand;
-import edsdk.utils.CanonConstants.EdsError;
-import edsdk.utils.CanonConstants.EdsObjectEvent;
-import edsdk.utils.CanonUtils;
+import modules.canon.bindings.EdSdkLibrary.EdsBaseRef;
+import modules.canon.bindings.EdSdkLibrary.EdsDirectoryItemRef;
+import modules.canon.bindings.EdSdkLibrary.EdsObjectEventHandler;
+import modules.canon.utils.CanonConstants.EdsCameraCommand;
+import modules.canon.utils.CanonConstants.EdsError;
+import modules.canon.utils.CanonConstants.EdsObjectEvent;
+import modules.canon.utils.CanonUtils;
 
 /**
  * 

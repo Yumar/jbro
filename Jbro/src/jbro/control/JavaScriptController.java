@@ -5,8 +5,6 @@
  */
 package jbro.control;
 
-import edsdk.api.CanonCamera;
-import edsdk.utils.CanonConstants;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,6 +20,8 @@ import javafx.print.Printer;
 import javafx.print.PrinterJob;
 import javafx.scene.transform.Scale;
 import javafx.scene.web.WebView;
+import modules.canon.api.CanonCamera;
+import modules.canon.utils.CanonConstants;
 
 /**
  *
@@ -36,14 +36,7 @@ public class JavaScriptController {
     public void exit() {
         CanonCamera.close();
         Platform.exit();        
-    }
-    
-    @Override
-    protected void finalize() throws Throwable {
-        CanonCamera.close();
-        super.finalize(); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    }  
     
     
     public CanonCamera getOpenedCamera(){
