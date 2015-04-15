@@ -54,7 +54,7 @@ public class NavegadorController implements Initializable {
                 }
         );
         
-        webEngine.load("http://localhost:8383/servicio-escolar/");
+        webEngine.load("http://10.12.2.96:8080/jce-registro-escolar/");
     }    
 
     @FXML
